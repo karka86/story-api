@@ -43,17 +43,18 @@ export class AuthController {
      static auth_user = async (request: Request , res: Response) => {
         
         try {
-            
+            console.log('request')
+            console.log(request.body)
             const userRepository = getRepository(User);
             const email = request.body.email
             const password = request.body.password
-            const role = request.body.isAdmin === 'true' ? "admin" : "user"
+            const role = request.body.isAdmin === true ? "admin" : "user"
             const user : User = await userRepository.findOne({email : email, password: password});
             if(!user){
                 throw new Error("Please check your credentials");
             }
             if(user.role !== role){
-                throw new Error("You are not a " + role);
+                throw new Error("You do not have a '" + role + "' role");
             }
             console.log('user')
             console.log(user)

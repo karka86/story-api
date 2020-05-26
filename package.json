@@ -24,7 +24,9 @@
       "typeorm": "0.2.25"
    },
    "scripts": {
-      "start": "HOST='172.31.5.79' ts-node index.ts",
+      "index": "HOST='172.31.5.79' ts-node index.ts",
+      "app": "HOST='172.31.5.79' ts-node app.js",
+      "starter": "HOST='172.31.5.79' ts-node starter.js",
       "test": "mocha --timeout 10000"
    }
 }

@@ -36,9 +36,9 @@ export class StoryController {
         if (!story.cost) {
             throw new Error("Cost missing");
         }
-        if (!story.createdBy) {
+        /*if (!story.createdBy) {
             throw new Error("createdBy is missing");
-        }
+        }*/
     };
 
     
@@ -80,14 +80,17 @@ export class StoryController {
     static get_story = async (request: Request , res: Response) => {
         
         try {
-            const storyRepository = getRepository(Story);
-            const story = await storyRepository.findOne(request.params.id)
             
-            if(story.createdBy !== request.user.id){
+            const storyRepository = getRepository(Story);
+            const story: Story = await storyRepository.findOne(request.params.id)
+          
+          
+            /*if(request.user.role === constants.roles.user && story.createdBy !== request.user.id ){
                 throw new Error("You are not authorized to view this User Story");
-            }
-            res.json(story)
+            }*/
+            await res.json(story)
         } catch (e) {
+            console.log(e)
             res.status(400).json({"error": e.message});
         }
        

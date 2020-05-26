@@ -5,7 +5,7 @@ export enum Type {
     ENHANCEMENT = "enhancement",
     BUGFIX = "bugfix",
     DEVELOPMENT = "development",
-    QA = "QA",
+    QA = "qa",
     
 }
 
@@ -41,7 +41,7 @@ export class Story {
     cost: number;
     
     @ManyToOne(type => User, user => user.stories)
-    createdBy: number;
+    createdBy: User;
     
     
     @Column({default : "new"})

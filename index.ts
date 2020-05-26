@@ -47,20 +47,24 @@ createConnection().then(async connection => {
     function makeServer() {
         // create express app
         const app = express();
+        
+        app.use(bodyParser.urlencoded({ extended: false }));
         app.use(bodyParser.json());
         app.use(cors());
         //app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-       
+        
+        app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {explorer: true}));
         router.use(authRouter);
+      
+        
         router.use("/stories", authenticate, storiesRouter);
         app.use('/api/v1', router);
-         app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {explorer: true}));
-       
-      
+         
+        
         // start express server
-        app.set('domain', '172.31.5.79');
-        const server = app.listen(3000);
-        console.log("Express server has started on port 3000. Open http://localhost:3000/users to see results");
+        //app.set('domain', '172.31.5.79');
+        const server = app.listen(3000, () =>console.log("Express server has started on port 3000."));
+        
         return app
         
     }

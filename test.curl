@@ -1,8 +1,10 @@
 curl -d '{"firstName": "Phantom","lastName": "Assassin","email" : "saw3@gmail.com","password" : "test"}' -H 'Content-Type: application/json' http://localhost:3000/api/v1/register
 
-curl -H 'Content-Type: application/json' -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiUGhhbnRvbSIsImxhc3ROYW1lIjoiQXNzYXNzaW4iLCJyb2xlIjoidXNlciIsImlhdCI6MTU5MDQxNzY5NH0.tqwevme0Lu_UDH-Tnty0_Oj_UENrFjCLMM_q2wGaKlE' http://localhost:3000/api/v1/me
+curl http://localhost:3000/api/v1/sign_in -d '{"isAdmin" : "true", "email" : "saw3@gmail.com","password" : "test"}' -H 'Content-Type: application/json' 
 
-curl -d '{"isAdmin" : "true", "email" : "saw3@gmail.com","password" : "test"}' -H 'Content-Type: application/json' http://localhost:3000/api/v1/sign_in
+curl http://localhost:3000/api/v1/me -H 'Content-Type: application/json' -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiUGhhbnRvbSIsImxhc3ROYW1lIjoiQXNzYXNzaW4iLCJyb2xlIjoidXNlciIsImlhdCI6MTU5MDQxNzY5NH0.tqwevme0Lu_UDH-Tnty0_Oj_UENrFjCLMM_q2wGaKlE' 
+
+
 
 curl -d '{"estimatedHrs" : "1","cost" : "5", "summary" : "Story Summart", "description" : "Story Decsription","complexity" : "low", "type": "qa", "createdBy" : 2 }' -H 'Content-Type: application/json' -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiUGhhbnRvbSIsImxhc3ROYW1lIjoiQXNzYXNzaW4iLCJyb2xlIjoidXNlciIsImlhdCI6MTU5MDQxNzY5NH0.tqwevme0Lu_UDH-Tnty0_Oj_UENrFjCLMM_q2wGaKlE' http://localhost:3000/api/v1/stories
 
