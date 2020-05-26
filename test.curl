@@ -1,0 +1,18 @@
+curl -d '{"firstName": "Phantom","lastName": "Assassin","email" : "saw3@gmail.com","password" : "test"}' -H 'Content-Type: application/json' http://localhost:3000/api/v1/register
+
+curl -H 'Content-Type: application/json' -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiUGhhbnRvbSIsImxhc3ROYW1lIjoiQXNzYXNzaW4iLCJyb2xlIjoidXNlciIsImlhdCI6MTU5MDQxNzY5NH0.tqwevme0Lu_UDH-Tnty0_Oj_UENrFjCLMM_q2wGaKlE' http://localhost:3000/api/v1/me
+
+curl -d '{"isAdmin" : "true", "email" : "saw3@gmail.com","password" : "test"}' -H 'Content-Type: application/json' http://localhost:3000/api/v1/sign_in
+
+curl -d '{"estimatedHrs" : "1","cost" : "5", "summary" : "Story Summart", "description" : "Story Decsription","complexity" : "low", "type": "qa", "createdBy" : 2 }' -H 'Content-Type: application/json' -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiUGhhbnRvbSIsImxhc3ROYW1lIjoiQXNzYXNzaW4iLCJyb2xlIjoidXNlciIsImlhdCI6MTU5MDQxNzY5NH0.tqwevme0Lu_UDH-Tnty0_Oj_UENrFjCLMM_q2wGaKlE' http://localhost:3000/api/v1/stories
+
+curl -H 'Content-Type: application/json' -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiUGhhbnRvbSIsImxhc3ROYW1lIjoiQXNzYXNzaW4iLCJyb2xlIjoidXNlciIsImlhdCI6MTU5MDQxNzY5NH0.tqwevme0Lu_UDH-Tnty0_Oj_UENrFjCLMM_q2wGaKlE' http://localhost:3000/api/v1/stories/1
+
+curl -d '{"id": "1", "estimatedHrs" : "9","cost" : "9", "summary" : "StoryXXXX", "description" : "Story Decsription","complexity" : "low", "type": "qa", "createdBy" : 2 }' -H 'Content-Type: application/json' -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiUGhhbnRvbSIsImxhc3ROYW1lIjoiQXNzYXNzaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1OTA0MjUzODB9.e07S46uigDQ3OR_FUCCXu8vZYPCJcjid582V7PtDx90' http://localhost:3000/api/v1/stories/update
+
+//TODO
+Unit Testing - Node
+API Integration
+POST Request issue
+Unit Testing - React
+Swagger API
